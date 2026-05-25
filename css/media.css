@@ -1,0 +1,48 @@
+/* XS ==> Extra Small Devices (Smart Watches & Small Phones) */
+@media all and (width < 640px) {
+    
+}
+
+
+/* SM ==> Small Devices (Smartphones) */
+@media all and (640px <= width < 768px) {
+
+}
+
+
+/* MD ==> Medium Devices (Tablets & Small Laptops) */
+@media all and (768px <= width < 1024px) {
+
+}
+
+
+/* LG ==> Large Devices (Standard Laptops & Landscape Tablets) */
+@media all and (1024px <= width < 1280px) {
+
+}
+
+
+/* XL ==> Extra Large Devices (Large Laptops & Desktops) */
+@media all and (1280px <= width < 1536px) {
+
+}
+
+
+/* XXL ==> Extra Extra Large Devices (Large Screens, Smart TVs & Ultra-wide) */
+@media all and (1536px <= width) {
+
+}
+
+
+/* Orientation "Portrait Mode" ==> The Height is Greater Than or Equal to The Width
+(Mobile Phones When Held Upright) */
+@media all and (orientation: portrait) {
+
+}
+
+
+/* Orientation "Landscape Mode" ==> The Width is Greater Than The Height
+(Tablets, Laptops, or Phones Rotated Sideways) */
+@media all and (orientation: landscape) {
+    
+}
