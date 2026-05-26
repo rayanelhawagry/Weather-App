@@ -23,9 +23,79 @@ a {
     text-decoration: none;
 }
 
-.container {
-    width: 85%;
-    margin-inline: auto;
+/* ========================================================= */
+body {
+    background-image: url(../images/london.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* ========================================================= */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+*::selection {
+    background-color: #ff8c0066;
+}
+
+main {
+    width: 85%;
+    margin-inline: auto;
+    padding: 20px;
+    background-color: #19191917;
+    backdrop-filter: blur(7px);
+    border: 1px solid wheat;
+    border-radius: 30px;
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .header {
+    font-size: 2.5rem;
+}
+
+main input {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0px;
+    border: 2px solid wheat;
+    border-radius: 10px;
+    color: wheat;
+    background-color: #19191917;
+    font-size: 1rem;
+}
+
+main input::placeholder {
+    font-size: 1rem;
+    color: wheat;
+}
+
+main button {
+    color: wheat;
+    background-color: #19191917;
+    border: 2px solid wheat;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+main button:hover {
+    color: #ff8c0066;
+    border: 2px solid #ff8c0066;
+}
