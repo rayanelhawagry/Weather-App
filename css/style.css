@@ -99,3 +99,50 @@ main button:hover {
     color: #ff8c0066;
     border: 2px solid #ff8c0066;
 }
+
+.weather-cards {
+    padding: 10px;
+    margin: 10px 0px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    /* background-color: teal */
+}
+
+.outer {
+    width: 33.33333%;
+}
+
+.inner-card {
+    height: 100%;
+    text-align: center;
+    margin-inline: 10px;
+    padding: 10px;
+    background-color: #19191917;
+    border: 2px solid wheat;
+    /* font-size: 1.5rem; */
+    border-radius: 10px;
+    transition: all 0.2s;
+
+}
+
+.inner-card:hover {
+    border: 2px solid #ff8c0066;
+}
+
+.first-day .title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.first-day .details,
+.second-day .details,
+.third-day .details {
+    font-size: 1.2rem;
+}
+
+.second-day .title,
+.third-day .title {
+    font-size: 1.5rem;
+}
