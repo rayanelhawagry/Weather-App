@@ -113,11 +113,16 @@ main button:hover {
     width: 33.33333%;
 }
 
+.outer h1,
+.outer h2 {
+    color: darkorange;
+}
+
 .inner-card {
     height: 100%;
     text-align: center;
     margin-inline: 10px;
-    padding: 10px;
+    padding: 20px;
     background-color: #19191917;
     border: 2px solid wheat;
     /* font-size: 1.5rem; */
@@ -136,6 +141,15 @@ main button:hover {
     font-size: 1.5rem;
 }
 
+.first-day .status {
+    display: flex;
+    justify-content: center;
+}
+
+.first-day .status div {
+    margin: 10px;
+}
+
 .first-day .details,
 .second-day .details,
 .third-day .details {
@@ -145,4 +159,5 @@ main button:hover {
 .second-day .title,
 .third-day .title {
     font-size: 1.5rem;
+    margin-bottom: 10px;
 }
