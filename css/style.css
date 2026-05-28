@@ -25,17 +25,19 @@ a {
 
 /* ========================================================= */
 body {
-    background-image: url(../images/london.jpg);
-    background-position: center center;
+    background: radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%);
+    /* background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(251, 191, 36, 0.25), transparent 70%), #000000; */
+        /* background-image: url(../images/london.jpg); */
+        /* background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 100dvh;
+    background-size: cover; */
+        height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-body::before {
+/* body::before {
     content: '';
     position: absolute;
     top: 0;
@@ -44,18 +46,19 @@ body::before {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: -1;
-}
+} */
 
 *::selection {
-    background-color: #ff8c0066;
+    color: #0d1a36;
+    background-color: wheat;
 }
 
 main {
     width: 85%;
     margin-inline: auto;
     padding: 20px;
-    background-color: #19191917;
-    backdrop-filter: blur(7px);
+    /* background-color: #19191917; */
+    /* backdrop-filter: blur(7px); */
     border: 1px solid wheat;
     border-radius: 30px;
     color: wheat;
@@ -96,14 +99,14 @@ main button {
 }
 
 main button:hover {
-    color: #ff8c0066;
-    border: 2px solid #ff8c0066;
+    /* color: #0d1a36; */
+    border: 2px solid darkorange;
 }
 
 .weather-cards {
     padding: 10px;
     margin: 10px 0px;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     /* background-color: teal */
@@ -111,6 +114,7 @@ main button:hover {
 
 .outer {
     width: 33.33333%;
+    padding: 5px;
 }
 
 .outer h1,
@@ -121,18 +125,17 @@ main button:hover {
 .inner-card {
     height: 100%;
     text-align: center;
-    margin-inline: 10px;
+    /* margin-inline: 5px; */
     padding: 20px;
     background-color: #19191917;
     border: 2px solid wheat;
     /* font-size: 1.5rem; */
     border-radius: 10px;
     transition: all 0.2s;
-
 }
 
 .inner-card:hover {
-    border: 2px solid #ff8c0066;
+    border: 2px solid darkorange;
 }
 
 .first-day .title {
