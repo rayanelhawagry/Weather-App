@@ -6,7 +6,11 @@
     padding: 0;
     box-sizing: border-box;
     border: 0px solid transparent;
-    /* font-family: monospace; */
+}
+
+*::selection {
+    color: #0d1a36;
+    background-color: wheat;
 }
 
 img {
@@ -15,54 +19,20 @@ img {
     display: block;
 }
 
-ul {
-    list-style: none;
-}
-
-a {
-    color: black;
-    text-decoration: none;
-}
-
 /* ========================================================= */
 body {
+    height: 100dvh;
     background: radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%);
-    /* background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(251, 191, 36, 0.25), transparent 70%), #000000; */
-        /* background-image: url(../images/london.jpg); */
-        /* background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-        height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* font-family: 'Inter', sans-serif; */
-    /* font-family: 'Poppins', sans-serif; */
     font-family: monospace;
-}
-
-/* body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: -1;
-} */
-
-*::selection {
-    color: #0d1a36;
-    background-color: wheat;
 }
 
 main {
     width: 85%;
     margin-inline: auto;
     padding: 20px;
-    /* background-color: #19191917; */
-    /* backdrop-filter: blur(7px); */
     border: 2px solid wheat;
     border-radius: 30px;
     color: wheat;
@@ -77,21 +47,21 @@ main .header {
 
 main input {
     width: 70%;
-    padding: 10px;
     margin: 10px 0px;
+    padding: 10px;
     border: 2px solid wheat;
     border-radius: 10px;
     color: wheat;
     background-color: #19191917;
     font-size: 1rem;
     font-weight: 600;
-    transition: all 0.2s;
     font-family: monospace;
+    transition: all 0.2s;
 }
 
 main input::placeholder {
-    font-size: 1rem;
     color: wheat;
+    font-size: 1rem;
     font-family: monospace;
 }
 
@@ -100,29 +70,27 @@ main input:hover {
 }
 
 main button {
+    padding: 10px;
+    border: 2px solid wheat;
+    border-radius: 10px;
     color: wheat;
     background-color: #19191917;
-    border: 2px solid wheat;
     font-size: 1.5rem;
-    border-radius: 10px;
-    padding: 10px;
+    font-family: monospace;
     cursor: pointer;
     transition: all 0.2s;
-    font-family: monospace;
 }
 
 main button:hover {
-    /* color: #0d1a36; */
     border: 2px solid darkorange;
 }
 
-.weather-cards {
-    padding: 10px;
-    margin: 10px 0px;
+main .weather-cards {
     width: 100%;
+    margin: 10px 0px;
+    padding: 10px;
     display: flex;
     justify-content: center;
-    /* background-color: teal */
 }
 
 .outer {
@@ -135,26 +103,24 @@ main button:hover {
     color: darkorange;
 }
 
-.inner-card {
+.inner {
     height: 100%;
-    text-align: center;
-    /* margin-inline: 5px; */
     padding: 20px;
-    background-color: #19191917;
     border: 2px solid wheat;
-    /* font-size: 1.5rem; */
     border-radius: 10px;
+    background-color: #19191917;
+    text-align: center;
     transition: all 0.2s;
 }
 
-.inner-card:hover {
+.inner:hover {
     border: 2px solid darkorange;
 }
 
 .first-day .title {
+    font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
-    font-size: 1.5rem;
 }
 
 .first-day .status {
@@ -174,6 +140,8 @@ main button:hover {
 
 .second-day .title,
 .third-day .title {
-    font-size: 1.5rem;
     margin-bottom: 10px;
+    font-size: 1.5rem;
 }
+
+/* ========================================================= */
