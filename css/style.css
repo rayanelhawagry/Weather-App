@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     border: 0px solid transparent;
+    /* font-family: monospace; */
 }
 
 img {
@@ -35,6 +36,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* font-family: 'Inter', sans-serif; */
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: monospace;
 }
 
 /* body::before {
@@ -59,7 +63,7 @@ main {
     padding: 20px;
     /* background-color: #19191917; */
     /* backdrop-filter: blur(7px); */
-    border: 1px solid wheat;
+    border: 2px solid wheat;
     border-radius: 30px;
     color: wheat;
     display: flex;
@@ -80,11 +84,19 @@ main input {
     color: wheat;
     background-color: #19191917;
     font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-family: monospace;
 }
 
 main input::placeholder {
     font-size: 1rem;
     color: wheat;
+    font-family: monospace;
+}
+
+main input:hover {
+    border: 2px solid darkorange;
 }
 
 main button {
@@ -96,6 +108,7 @@ main button {
     padding: 10px;
     cursor: pointer;
     transition: all 0.2s;
+    font-family: monospace;
 }
 
 main button:hover {
