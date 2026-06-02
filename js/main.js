@@ -5,6 +5,7 @@ const firstDayCard = document.querySelector('.first-day');
 let currentLocation; // Make Cairo as a default...
 let locationDetails = [];
 let today;
+let arrToday;
 
 
 // Input value
@@ -27,9 +28,10 @@ const fetchData = async () => {
     let data = await response.json();
     locationDetails = data;
     today = new Date(locationDetails.location.localtime);
-    let dateFormatter = new Intl.DateTimeFormat("en-GB", {dateStyle: "full"})
+    let dateFormatter = new Intl.DateTimeFormat("en-GB", {dateStyle: "full"});
     today = dateFormatter.format(today);
-    console.log(today);
+    arrToday = today.split(",");
+    console.log(arrToday);
     displayData();
 }
 
@@ -38,27 +40,28 @@ const fetchData = async () => {
 const displayData = () => {
     firstDayCard.innerHTML =`
     <div class="title">
-        // <p>${today}</p>
-        // <p>Tuesday</p>
-        // <p class="date">May 26</p>
+        <p>${arrToday[0]}</p>
+        <p class="date">${arrToday[1]}</p>
     </div>
     <div class="details">
         <p>${locationDetails.location.name}</p>
-        <h1>22.1oC</h1>
-        <!-- <img src="" alt="Logo"> -->
-        <p>Clear</p>
+        <h1>${locationDetails.current.temp_c}°C</h1>
+        <div class="logo">
+            <img src="https:${locationDetails.current.condition.icon}" alt="Logo">
+        </div>
+        <p>${locationDetails.current.condition.text}</p>
         <div class="status">
             <div>
                 <i class="fa-solid fa-umbrella"></i>
-                20%
+                ${locationDetails.current.chance_of_rain}%
             </div>
             <div>
                 <i class="fa-solid fa-wind"></i>
-                18km/h
+                ${locationDetails.current.wind_kph}km/h
             </div>
             <div>
                 <i class="fa-solid fa-compass"></i>
-                East
+                ${locationDetails.current.wind_dir}
             </div>
         </div>
     </div>
