@@ -2,10 +2,13 @@
 const input = document.querySelector('input');
 const button = document.querySelector('button');
 const firstDayCard = document.querySelector('.first-day');
+const secondDayCard = document.querySelector('.second-day');
 let currentLocation; // Make Cairo as a default...
 let locationDetails = [];
 let today;
+let secondDay;
 let arrToday;
+let arrSecondDay;
 
 
 // Input value
@@ -24,21 +27,25 @@ input.addEventListener("keydown", function (e) {
 
 // Fetch data from API
 const fetchData = async () => {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=a5255ab1b8c04f1e9eb205856262905&q=${currentLocation}`);
+    const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=a5255ab1b8c04f1e9eb205856262905&q=${currentLocation}&days=7`);
     let data = await response.json();
     locationDetails = data;
-    today = new Date(locationDetails.location.localtime);
+
     let dateFormatter = new Intl.DateTimeFormat("en-GB", {dateStyle: "full"});
+    today = new Date(locationDetails.location.localtime);
+    secondDay = new Date(locationDetails.forecast.forecastday[1].date);
     today = dateFormatter.format(today);
+    secondDay = dateFormatter.format(secondDay);
     arrToday = today.split(",");
-    console.log(arrToday);
+    arrSecondDay = secondDay.split(",");
+    console.log(arrSecondDay);
     displayData();
 }
 
 
 // Display data
 const displayData = () => {
-    firstDayCard.innerHTML =`
+    firstDayCard.innerHTML = `
     <div class="title">
         <p>${arrToday[0]}</p>
         <p class="date">${arrToday[1]}</p>
@@ -64,6 +71,20 @@ const displayData = () => {
                 ${locationDetails.current.wind_dir}
             </div>
         </div>
+    </div>
+    `
+
+    secondDayCard.innerHTML = `
+    <div class="title">
+        <p>${arrSecondDay[0]}</p>
+    </div>
+    <div class="details">
+        <div class="logo">
+            <img src="https:${locationDetails.forecast.forecastday[1].day.condition.icon}" alt="Logo">
+        </div>
+        <h2>${locationDetails.forecast.forecastday[1].day.maxtemp_c}°C</h2>
+        <p>${locationDetails.forecast.forecastday[1].day.mintemp_c}°</p>
+        <p>${locationDetails.forecast.forecastday[1].day.condition.text}</p>
     </div>
     `
 }
