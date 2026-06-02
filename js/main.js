@@ -3,12 +3,15 @@ const input = document.querySelector('input');
 const button = document.querySelector('button');
 const firstDayCard = document.querySelector('.first-day');
 const secondDayCard = document.querySelector('.second-day');
+const thirdDayCard = document.querySelector('.third-day');
 let currentLocation; // Make Cairo as a default...
 let locationDetails = [];
 let today;
 let secondDay;
+let thirdDay;
 let arrToday;
 let arrSecondDay;
+let arrThirdDay;
 
 
 // Input value
@@ -31,14 +34,21 @@ const fetchData = async () => {
     let data = await response.json();
     locationDetails = data;
 
+    // Date Formatter
     let dateFormatter = new Intl.DateTimeFormat("en-GB", {dateStyle: "full"});
     today = new Date(locationDetails.location.localtime);
     secondDay = new Date(locationDetails.forecast.forecastday[1].date);
+    thirdDay = new Date(locationDetails.forecast.forecastday[2].date);
+
     today = dateFormatter.format(today);
     secondDay = dateFormatter.format(secondDay);
+    thirdDay = dateFormatter.format(thirdDay);
+
     arrToday = today.split(",");
     arrSecondDay = secondDay.split(",");
-    console.log(arrSecondDay);
+    arrThirdDay = thirdDay.split(",");
+
+    console.log(arrThirdDay);
     displayData();
 }
 
@@ -72,7 +82,7 @@ const displayData = () => {
             </div>
         </div>
     </div>
-    `
+    `;
 
     secondDayCard.innerHTML = `
     <div class="title">
@@ -86,7 +96,21 @@ const displayData = () => {
         <p>${locationDetails.forecast.forecastday[1].day.mintemp_c}°</p>
         <p>${locationDetails.forecast.forecastday[1].day.condition.text}</p>
     </div>
-    `
+    `;
+
+    thirdDayCard.innerHTML = `
+    <div class="title">
+        <p>${arrThirdDay[0]}</p>
+    </div>
+    <div class="details">
+        <div class="logo">
+            <img src="https:${locationDetails.forecast.forecastday[2].day.condition.icon}" alt="Logo">
+        </div>
+        <h2>${locationDetails.forecast.forecastday[2].day.maxtemp_c}°C</h2>
+        <p>${locationDetails.forecast.forecastday[2].day.mintemp_c}°</p>
+        <p>${locationDetails.forecast.forecastday[2].day.condition.text}</p>
+    </div>
+    `;
 }
 
 
