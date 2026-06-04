@@ -4,7 +4,7 @@ const button = document.querySelector('button');
 const firstDayCard = document.querySelector('.first-day');
 const secondDayCard = document.querySelector('.second-day');
 const thirdDayCard = document.querySelector('.third-day');
-let currentLocation; // Make Cairo as a default...
+let currentLocation = "Cairo"; // Make "Geolocation API" as a default...
 let locationDetails = [];
 let today;
 let secondDay;
@@ -50,7 +50,9 @@ const fetchData = async () => {
 
     console.log(arrThirdDay);
     displayData();
-}
+};
+
+fetchData();
 
 
 // Display data
@@ -111,6 +113,6 @@ const displayData = () => {
         <p>${locationDetails.forecast.forecastday[2].day.condition.text}</p>
     </div>
     `;
-}
+};
 
 
